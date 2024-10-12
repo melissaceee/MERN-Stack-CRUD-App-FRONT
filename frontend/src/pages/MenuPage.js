@@ -44,20 +44,23 @@ const MenuPage = () => {
   };
 
   const groupedMenuItems = menuItems.reduce((acc, item) => {
-    const category = item.category || 'Uncategorized'; // Set a default category if it's undefined
+    const category = item.category || 'Uncategorized';
     if (!acc[category]) {
       acc[category] = [];
     }
     acc[category].push(item);
     return acc;
-}, {});
-
-
+  }, {});
 
   return (
     <div className="menu-page">
-      <div className="container">
+      <div className="menu-header">
         <h1 className="menu-title">Our Menu</h1>
+        <button className="go-to-cart-btn" onClick={goToCheckout}>
+          Go to Cart
+        </button>
+      </div>
+      <div className="container">
         {Object.entries(groupedMenuItems).map(([category, items]) => (
           <div key={category} className="menu-section">
             <h2 className="menu-section-title">{category}</h2>
@@ -75,7 +78,6 @@ const MenuPage = () => {
             ))}
           </div>
         ))}
-        <button className="checkout-btn" onClick={goToCheckout}>Go to Cart</button>
       </div>
 
       {/* Notification */}
