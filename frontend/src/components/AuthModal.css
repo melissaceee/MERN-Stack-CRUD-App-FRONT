@@ -1,0 +1,92 @@
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it stays on top */
+}
+
+.auth-modal {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.auth-modal h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.auth-modal form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.auth-submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-submit-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.switch-auth {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.switch-auth-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.switch-auth-button:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}

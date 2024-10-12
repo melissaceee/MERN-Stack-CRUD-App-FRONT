@@ -1,0 +1,29 @@
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .action {
+    margin-top: 20px;
+  }
+  
+  .button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: var(--secondary-color);
+  }
+  

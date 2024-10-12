@@ -1,0 +1,75 @@
+/* Adjusting the row to hold name, description, price, and button */
+.menu-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Container for the name and description */
+.menu-item-name-description {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows this section to take up remaining space */
+}
+
+/* Item name */
+.menu-item-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Item price */
+.menu-item-price {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  white-space: nowrap;
+  margin-right: 10px; /* Space between price and button */
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  z-index: 1000;
+}
+
+.notification.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+/* Styling for Add to Cart Button */
+.add-to-cart-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: .8rem; 
+  margin-left: px; 
+  border-radius: 70%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px; 
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--accent-color); /* Darkens the button on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .menu-item {
+    padding: 15px;
+  }
+}
