@@ -7,34 +7,31 @@ const AuthModal = ({ isOpen, onClose, setUser }) => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
-        password: ''
+        password: '',
     });
     const [error, setError] = useState(null);
     const modalRef = useRef(null);
 
-    const handleOutsideClick = (e) => {
-        if (modalRef.current && !modalRef.current.contains(e.target)) {
-            onClose();
-        }
-    };
-
     useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (modalRef.current && !modalRef.current.contains(e.target)) {
+                onClose();
+            }
+        };
+
         if (isOpen) {
             document.addEventListener('mousedown', handleOutsideClick);
-        } else {
-            document.removeEventListener('mousedown', handleOutsideClick);
         }
+
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
-    }, [isOpen]);
+    }, [isOpen, onClose]);
 
-    // Handle form changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,12 +43,11 @@ const AuthModal = ({ isOpen, onClose, setUser }) => {
             const { token, user } = response.data;
             localStorage.setItem('token', token);
             setUser(user);
-            onClose(); 
+            onClose();
         } catch (err) {
             setError('Login/Register failed. Please try again.');
         }
     };
-
 
     if (!isOpen) return null;
 

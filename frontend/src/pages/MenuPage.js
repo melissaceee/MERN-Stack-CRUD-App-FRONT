@@ -34,7 +34,7 @@ const MenuPage = () => {
       setNotification(`${menuItem.itemname} added to cart!`);
       setTimeout(() => setNotification(''), 2000);
     })
-    .catch(error => {
+    .catch(() => {
       setError('Failed to add item to cart');
     });
   };
@@ -61,6 +61,7 @@ const MenuPage = () => {
         </button>
       </div>
       <div className="container">
+        {error && <div className="error-message">{error}</div>}
         {Object.entries(groupedMenuItems).map(([category, items]) => (
           <div key={category} className="menu-section">
             <h2 className="menu-section-title">{category}</h2>
